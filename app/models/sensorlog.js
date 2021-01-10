@@ -1,12 +1,24 @@
 'use strict';
+const{
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  const SensorLog = sequelize.define('SensorLog', {
+  class SensorLog extends Model {
+    static associate(models){
+
+    }
+  };
+  SensorLog.init({
+    id: {
+      type: DataTypes.STRING,
+      primaryKey: true,
+    }, 
     humidity: DataTypes.DOUBLE,
     temperature: DataTypes.DOUBLE,
     up_time: DataTypes.DATE,
-  }, {});
-  SensorLog.associate = function(models) {
-    // associations can be defined here
-  };
+  }, {
+    sequelize,
+    modelName: 'SensorLog',
+  });
   return SensorLog;
 };

@@ -4,9 +4,8 @@ module.exports = {
     await queryInterface.createTable('SensorLogs', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       humidity: {
         type: Sequelize.DOUBLE

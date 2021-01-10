@@ -34,6 +34,6 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.sensors = require("./sensorlog.js")(sequelize, Sequelize);
+db.sensorlogs = require("./sensorlog.js")(sequelize, Sequelize);
 
 module.exports = db;

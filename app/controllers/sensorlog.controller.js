@@ -1,5 +1,5 @@
 const db = require("../models");
-const SensorLog = db.sensorlog;
+const SensorLog = db.sensorlogs;
 
 // Create and Save a new SensorLog
 exports.create = (req, res) => {
@@ -13,6 +13,7 @@ exports.create = (req, res) => {
 
     // Create a SensorLog
     const sensorLog = {
+        id : req.body.x_coordinate + "-" + req.body.y_coordinate,
         humidity: req.body.humidity,
         temperature: req.body.temperature,
         up_time: req.body.up_time,
