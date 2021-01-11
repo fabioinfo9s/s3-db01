@@ -2,9 +2,14 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('SensorLogs', {
-      id: {
+      id:{
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      sensor_id: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       humidity: {

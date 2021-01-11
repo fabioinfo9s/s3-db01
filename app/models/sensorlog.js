@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       primaryKey: true,
     }, 
+    sensor_id: DataTypes.INTEGER,
     humidity: DataTypes.DOUBLE,
     temperature: DataTypes.DOUBLE,
     up_time: DataTypes.DATE,
