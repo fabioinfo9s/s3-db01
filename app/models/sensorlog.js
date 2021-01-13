@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
   };
   SensorLog.init({
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       primaryKey: true,
     }, 
-    sensor_id: DataTypes.INTEGER,
+    sensor_id: DataTypes.STRING,
     humidity: DataTypes.DOUBLE,
     temperature: DataTypes.DOUBLE,
     up_time: DataTypes.DATE,
