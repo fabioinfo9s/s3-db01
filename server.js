@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:8081"
+  origin: "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
@@ -15,20 +15,22 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./app/models");
-db.sequelize.sync({ force: true }).then(() => {
-    console.log("Drop and re-sync db.");
-});
+const db = require('./models');
+db.sequelize.sync();//.then(() =>{
+    //console.log("Drop and re-sync db.");
+//});
+
+
 
 // simple route
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome User!" });
+  res.json({ message: "Hello wurld." });
 });
 
-require("./app/routes/sensorlog.routes")(app);
+require("./routes/sensorlog.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3002;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
+module.exports = app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
