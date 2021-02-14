@@ -14,10 +14,11 @@ exports.create = (req, res) => {
     }
 
     //create Floor
-    const sensorlog = { 
-        floor_number: req.body.floor_number,
-        max_x_coordinate: req.body.max_x_coordinate,
-        max_y_coordinate: req.body.max_y_coordinate
+    const sensorlog = {
+        sensor_id: req.body.sensor_id,
+        humidity: req.body.humidity,
+        temperature: req.body.temperature,
+        up_time: req.body.up_time
     };
 
     //Save floor in the database
