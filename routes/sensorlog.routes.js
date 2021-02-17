@@ -6,7 +6,5 @@ module.exports = app => {
     // Create a new floor
     router.post("/", sensorlogs.create);
 
-
-
     app.use('/api/sensorlogs', router);
 };
