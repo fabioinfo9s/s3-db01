@@ -14,11 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   SensorLog.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     sensor_id: DataTypes.STRING,
     humidity: DataTypes.DOUBLE,
     temperature: DataTypes.DOUBLE,
